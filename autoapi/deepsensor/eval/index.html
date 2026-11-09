@@ -2165,32 +2165,15 @@ xarray/pandas objects will have an additional <code>sample</code> dimension.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>X_t (</code>
+                <code>X_t (xarray.Dataset | xarray.DataArray | pandas.DataFrame | pandas.Series | pandas.Index | numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code> | :class:<code>pandas.DataFrame</code> | :class:<code>pandas.Series</code> | :class:<code>pandas.Index</code> | :class:<code>numpy:numpy.ndarray</code>)
+                <p>numpy.ndarray)
 Target locations to predict at. Can be an xarray object containing
 on-grid locations or a pandas object containing off-grid locations.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>X_t_mask (</code>
-            </td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>, optional)
-2D mask to apply to gridded <code>X_t</code> (zero/False will be NaNs). Will be interpolated
-to the same grid as <code>X_t</code>. Default None (no mask).</p>
               </div>
             </td>
             <td>

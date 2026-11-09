@@ -2486,34 +2486,34 @@ pandas object containing off-grid predictions.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data_processor (</code>
+                <code>data_processor</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="DataProcessor(folder=None, time_name='time', x1_name='x1', x2_name='x2', x1_map=None, x2_map=None, deepcopy=True, verbose=False) (deepsensor.data.processor.DataProcessor)" href="../../data/processor/#deepsensor.data.processor.DataProcessor">DataProcessor</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.processor.DataProcessor</code>):
-DataProcessor object, used to unnormalise predictions.</p>
+                <p>DataProcessor object, used to unnormalise predictions.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>task_loader (</code>
+                <code>task_loader</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="TaskLoader(task_loader_ID=None, context=None, target=None, aux_at_contexts=None, aux_at_targets=None, links=None, context_delta_t=0, target_delta_t=0, time_freq='D', xarray_interp_method='linear', discrete_xarray_sampling=False, dtype='float32') (deepsensor.data.loader.TaskLoader)" href="../../data/loader/#deepsensor.data.loader.TaskLoader">TaskLoader</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.loader.TaskLoader</code>):
-TaskLoader object, used to determine target variables for unnormalising.</p>
+                <p>TaskLoader object, used to determine target variables for unnormalising.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
@@ -2583,13 +2583,13 @@ TaskLoader object, used to determine target variables for unnormalising.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>X_t (</code>
+                <code>X_t (xarray.Dataset | xarray.DataArray | pandas.DataFrame | pandas.Series | pandas.Index | numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code> | :class:<code>pandas.DataFrame</code> | :class:<code>pandas.Series</code> | :class:<code>pandas.Index</code> | :class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 Target locations to predict at. Can be an xarray object
 containingon-grid locations or a pandas object containing off-grid locations.</p>
               </div>
@@ -2607,7 +2607,7 @@ containingon-grid locations or a pandas object containing off-grid locations.</p
             </td>
             <td>
               <div class="doc-md-description">
-                <p>:class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>, optional
+                <p>xarray.Dataset | xarray.DataArray, optional
 2D mask to apply to gridded <code>X_t</code> (zero/False will be NaNs). Will be interpolated
 to the same grid as <code>X_t</code>. Default None (no mask).</p>
               </div>
@@ -2635,18 +2635,18 @@ the coords before passing to model. Default <code>False</code>.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>aux_at_targets_override (</code>
+                <code>aux_at_targets_override</code>
             </td>
             <td>
+                  <code><span title="xarray.Dataset">Dataset</span> | <span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>):
-Optional auxiliary xarray data to override from the task_loader.</p>
+                <p>Optional auxiliary xarray data to override from the task_loader.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2838,7 +2838,7 @@ off-grid case. Default <code>None</code>.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.model.pred.Prediction</code>):
+                <p>deepsensor.model.pred.Prediction):
 A <code>dict</code>-like object mapping from target variable IDs to xarray or pandas objects
 containing model predictions.
 - If <code>X_t</code> is a pandas object, returns pandas objects
@@ -2935,14 +2935,14 @@ context data. Shape (N, N).</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -2957,17 +2957,17 @@ Task containing context data.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>: Covariance matrix over target points.</p>
+                <p>numpy.ndarray: Covariance matrix over target points.</p>
               </div>
             </td>
           </tr>
@@ -3007,14 +3007,14 @@ context data.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3079,14 +3079,14 @@ context data.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3150,14 +3150,14 @@ Task containing context data.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3222,14 +3222,14 @@ data.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3244,17 +3244,17 @@ Task containing context data.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>: Mean prediction over target points.</p>
+                <p>numpy.ndarray: Mean prediction over target points.</p>
               </div>
             </td>
           </tr>
@@ -3299,14 +3299,14 @@ context data.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3371,14 +3371,14 @@ context data. Returned shape is <code>(n_samples, n_target)</code>.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3419,7 +3419,7 @@ Task containing context data.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>tuple[:class:<code>numpy:numpy.ndarray</code>]: Joint samples over target points.</p>
+                <p>tuple[numpy:numpy.ndarray]: Joint samples over target points.</p>
               </div>
             </td>
           </tr>
@@ -3459,14 +3459,14 @@ points. Shape (N,).</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3481,17 +3481,17 @@ Task containing context data.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>: Marginal standard deviation over target points.</p>
+                <p>numpy.ndarray: Marginal standard deviation over target points.</p>
               </div>
             </td>
           </tr>
@@ -3531,14 +3531,14 @@ Shape (N,).</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>task (</code>
+                <code>task</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>):
-Task containing context data.</p>
+                <p>Task containing context data.</p>
               </div>
             </td>
             <td>
@@ -3553,17 +3553,17 @@ Task containing context data.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>: Marginal variance over target points.</p>
+                <p>numpy.ndarray: Marginal variance over target points.</p>
               </div>
             </td>
           </tr>
@@ -3613,14 +3613,14 @@ reorder the time dims from ("lead_time", "init_time") to ("init_time", "lead_tim
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>pred (</code>
+                <code>pred</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="Prediction(target_var_IDs, pred_params, dates, X_t, X_t_mask=None, coord_names=None, n_samples=0, forecasting_mode=False, lead_times=None) (deepsensor.model.pred.Prediction)" href="../pred/#deepsensor.model.pred.Prediction">Prediction</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.model.pred.Prediction</code>):
-Prediction object to add valid time coordinate to.</p>
+                <p>Prediction object to add valid time coordinate to.</p>
               </div>
             </td>
             <td>
@@ -3646,7 +3646,7 @@ Prediction object to add valid time coordinate to.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.model.pred.Prediction</code>:
+                <p>deepsensor.model.pred.Prediction:
 Prediction object with valid time coordinate added.</p>
               </div>
             </td>

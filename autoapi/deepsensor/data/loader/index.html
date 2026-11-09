@@ -2432,8 +2432,8 @@
 
 
 
-        <p>Generates :class:<code>~.data.task.Task</code> objects for training, testing, and inference with DeepSensor models.</p>
-<p>Provides a suite of sampling methods for generating :class:<code>~.data.task.Task</code> objects for different kinds of
+        <p>Generates deepsensor.data.task.Task objects for training, testing, and inference with DeepSensor models.</p>
+<p>Provides a suite of sampling methods for generating deepsensor.data.task.Task objects for different kinds of
 predictions, such as: spatial interpolation, forecasting, downscaling, or some combination
 of these.</p>
 
@@ -2479,76 +2479,76 @@ arguments are ignored.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>context (</code>
+                <code>context</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span> | <span title="pandas.DataFrame">DataFrame</span> | <span title="typing.List">List</span>[<span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span>, <span title="pandas.DataFrame">DataFrame</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code> | List[:class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>, :class:<code>pandas.DataFrame</code>]):
-Context data. Can be a single :class:<code>xarray.DataArray</code>,
-:class:<code>xarray.Dataset</code> or :class:<code>pandas.DataFrame</code>, or a
+                <p>Context data. Can be a single xarray.DataArray,
+xarray.Dataset or pandas.DataFrame, or a
 list/tuple of these.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>target (</code>
+                <code>target</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span> | <span title="pandas.DataFrame">DataFrame</span> | <span title="typing.List">List</span>[<span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span>, <span title="pandas.DataFrame">DataFrame</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code> | List[:class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>, :class:<code>pandas.DataFrame</code>]):
-Target data. Can be a single :class:<code>xarray.DataArray</code>,
-:class:<code>xarray.Dataset</code> or :class:<code>pandas.DataFrame</code>, or a
+                <p>Target data. Can be a single xarray.DataArray,
+xarray.Dataset or pandas.DataFrame, or a
 list/tuple of these.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>aux_at_contexts (Tuple[int, </code>
+                <code>aux_at_contexts</code>
             </td>
             <td>
+                  <code><span title="typing.Tuple">Tuple</span>[<span title="int">int</span>, <span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>], optional):
-Auxiliary data at context locations. Tuple of two elements, where
+                <p>Auxiliary data at context locations. Tuple of two elements, where
 the first element is the index of the context set for which the
 auxiliary data will be sampled at, and the second element is the
-auxiliary data, which can be a single :class:<code>xarray.DataArray</code> or
-:class:<code>xarray.Dataset</code>. Default: None.</p>
+auxiliary data, which can be a single xarray.DataArray or
+xarray.Dataset. Default: None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>aux_at_targets (</code>
+                <code>aux_at_targets</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>, optional):
-Auxiliary data at target locations. Can be a single
-:class:<code>xarray.DataArray</code> or :class:<code>xarray.Dataset</code>. Default:
+                <p>Auxiliary data at target locations. Can be a single
+xarray.DataArray or xarray.Dataset. Default:
 None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2633,7 +2633,7 @@ Default is 0.</p>
             <td>
               <div class="doc-md-description">
                 <p>Interpolation method to use when interpolating
-:class:<code>xarray.DataArray</code>. Default is <code>'linear'</code>.</p>
+xarray.DataArray. Default is <code>'linear'</code>.</p>
               </div>
             </td>
             <td>
@@ -2711,13 +2711,13 @@ dtype. Default: <code>'float32'</code>.</p>
     <div class="doc doc-contents ">
 
         <p>Generate a task for a given date (or a list of
-:class:<code>.data.task.Task</code> objects for a list of dates).</p>
+.data.task.Task objects for a list of dates).</p>
 <p>There are several sampling strategies available for the context and
 target data:</p>
 <pre><code>- "all": Sample all observations.
 - int: Sample N observations uniformly at random.
 - float: Sample a fraction of observations uniformly at random.
-- :class:`numpy:numpy.ndarray`, shape (2, N):
+- numpy:numpy.ndarray, shape (2, N):
     Sample N observations at the given x1, x2 coordinates. Coords are assumed to be
     normalised.
 - "split": Split pandas observations into disjoint context and target sets.
@@ -2748,14 +2748,14 @@ target data:</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>date (</code>
+                <code>date</code>
             </td>
             <td>
+                  <code><span title="pandas.Timestamp">Timestamp</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>pandas.Timestamp</code>):
-Date for which to generate the task.</p>
+                <p>Date for which to generate the task.</p>
               </div>
             </td>
             <td>
@@ -2764,13 +2764,13 @@ Date for which to generate the task.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>context_sampling (str | int | float | </code>
+                <code>context_sampling (str | int | float | numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code> | List[str | int | float | :class:<code>numpy:numpy.ndarray</code>], optional):
+                <p>numpy.ndarray | List[str | int | float | numpy:numpy.ndarray], optional):
 Sampling strategy for the context data, either a list of
 sampling strategies for each context set, or a single strategy
 applied to all context sets. Default is <code>"all"</code>.</p>
@@ -2782,13 +2782,13 @@ applied to all context sets. Default is <code>"all"</code>.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>target_sampling (str | int | float | </code>
+                <code>target_sampling (str | int | float | numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code> | List[str | int | float | :class:<code>numpy:numpy.ndarray</code>], optional):
+                <p>numpy.ndarray | List[str | int | float | numpy:numpy.ndarray], optional):
 Sampling strategy for the target data, either a list of
 sampling strategies for each target set, or a single strategy
 applied to all target sets. Default is <code>None</code>, meaning no target
@@ -2872,7 +2872,7 @@ None.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code> | List[:class:<code>~.data.task.Task</code>]:
+                <p>deepsensor.data.task.Task | List[deepsensor.data.task.Task]:
 Task object or list of task objects for each date containing
 the context and target data.</p>
               </div>
@@ -2985,8 +2985,8 @@ the context and target data.</p>
             <td>
               <div class="doc-md-description">
                 <p>If the context/target data is not a tuple/list of
-        :class:<code>xarray.DataArray</code>, :class:<code>xarray.Dataset</code> or
-        :class:<code>pandas.DataFrame</code>.</p>
+        xarray.DataArray, xarray.Dataset or
+        pandas.DataFrame.</p>
               </div>
             </td>
           </tr>
@@ -3059,8 +3059,8 @@ the context and target data.</p>
             <td>
               <div class="doc-md-description">
                 <p>If the context/target data is not a tuple/list of
-        :class:<code>xarray.DataArray</code>, :class:<code>xarray.Dataset</code> or
-        :class:<code>pandas.DataFrame</code>.</p>
+        xarray.DataArray, xarray.Dataset or
+        pandas.DataFrame.</p>
               </div>
             </td>
           </tr>
@@ -3142,14 +3142,14 @@ is represented as dask arrays or datasets into memory.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>da (</code>
+                <code>da</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>):
-DataArray to sample, assumed to be sliced for the task already.</p>
+                <p>DataArray to sample, assumed to be sliced for the task already.</p>
               </div>
             </td>
             <td>
@@ -3158,13 +3158,13 @@ DataArray to sample, assumed to be sliced for the task already.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>sampling_strat (str | int | float | </code>
+                <code>sampling_strat (str | int | float | numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 Sampling strategy, either "all" or an integer for random grid
 cell sampling.</p>
               </div>
@@ -3208,7 +3208,7 @@ cell sampling.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Tuple[:class:<code>numpy:numpy.ndarray</code>, :class:<code>numpy:numpy.ndarray</code>]:
+                <p>Tuple[numpy:numpy.ndarray, numpy:numpy.ndarray]:
 Tuple of sampled target data and sampled context data.</p>
               </div>
             </td>
@@ -3273,14 +3273,14 @@ are out of bounds.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>df (</code>
+                <code>df</code>
             </td>
             <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span> | <span title="pandas.Series">Series</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>pandas.DataFrame</code> | :class:<code>pandas.Series</code>):
-Dataframe to sample, assumed to be time-sliced for the task
+                <p>Dataframe to sample, assumed to be time-sliced for the task
 already.</p>
               </div>
             </td>
@@ -3290,13 +3290,13 @@ already.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>sampling_strat (str | int | float | </code>
+                <code>sampling_strat (str | int | float | numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 Sampling strategy, either "all" or an integer for random grid
 cell sampling.</p>
               </div>
@@ -3405,13 +3405,13 @@ does not contain all the requested samples.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>X_t (</code>
+                <code>X_t (numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code> | Tuple[:class:<code>numpy:numpy.ndarray</code>, :class:<code>numpy:numpy.ndarray</code>]):
+                <p>numpy.ndarray | Tuple[numpy:numpy.ndarray, numpy:numpy.ndarray]):
 Off-grid locations at which to sample the auxiliary data. Can
 be a tuple of two numpy arrays, or a single numpy array.</p>
               </div>
@@ -3422,14 +3422,14 @@ be a tuple of two numpy arrays, or a single numpy array.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>offgrid_aux (</code>
+                <code>offgrid_aux</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>):
-Auxiliary data at off-grid locations.</p>
+                <p>Auxiliary data at off-grid locations.</p>
               </div>
             </td>
             <td>
@@ -3444,18 +3444,18 @@ Auxiliary data at off-grid locations.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>:
+                <p>numpy.ndarray:
 [Description of the returned numpy ndarray]</p>
               </div>
             </td>

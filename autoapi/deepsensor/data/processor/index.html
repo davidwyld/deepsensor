@@ -2766,14 +2766,14 @@ changed by reference when normalising. Defaults to True.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data (</code>
+                <code>data</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span> | <span title="pandas.DataFrame">DataFrame</span> | <span title="typing.List">List</span>[<span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span> | <span title="pandas.DataFrame">DataFrame</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code> | List[:class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code>]):
-Data to be normalised. Can be an xarray DataArray, xarray
+                <p>Data to be normalised. Can be an xarray DataArray, xarray
 Dataset, pandas DataFrame, or a list containing objects of
 these types.</p>
               </div>
@@ -2820,7 +2820,7 @@ these types.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code> | List[:class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code>]:
+                <p>xarray.DataArray | xarray.Dataset | pandas.DataFrame | List[xarray.DataArray | xarray.Dataset | pandas.DataFrame]:
 Normalised data. Type or structure depends on the input.</p>
               </div>
             </td>
@@ -3076,14 +3076,14 @@ Description of the returned value(s) needed.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data (</code>
+                <code>data</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code>):
-Description of the parameter.</p>
+                <p>Description of the parameter.</p>
               </div>
             </td>
             <td>
@@ -3148,14 +3148,14 @@ pandas object.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data (</code>
+                <code>data</code>
             </td>
             <td>
+                  <code>xarray.DataArray, xarray.Dataset, pandas.DataFrame, or pandas.Series</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>, :class:<code>xarray.Dataset</code>, :class:<code>pandas.DataFrame</code>, or :class:<code>pandas.Series</code>):
-[Description Needed]</p>
+                <p>[Description Needed]</p>
               </div>
             </td>
             <td>
@@ -3269,13 +3269,13 @@ numpy object.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data (</code>
+                <code>data (xarray.DataArray, xarray.Dataset, pandas.DataFrame, pandas.Series, or numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>, :class:<code>xarray.Dataset</code>, :class:<code>pandas.DataFrame</code>, :class:<code>pandas.Series</code>, or :class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 [Description Needed]</p>
               </div>
             </td>
@@ -3405,13 +3405,13 @@ numpy object.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>coord_array (</code>
+                <code>coord_array (numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 Array of shape <code>(2, N)</code> containing coords.</p>
               </div>
             </td>
@@ -3493,14 +3493,14 @@ Description of the returned value(s) needed.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data (</code>
+                <code>data</code>
             </td>
             <td>
+                  <code>xarray.DataArray, xarray.Dataset, pandas.DataFrame, or pandas.Series</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>, :class:<code>xarray.Dataset</code>, :class:<code>pandas.DataFrame</code>, or :class:<code>pandas.Series</code>):
-[Description Needed]</p>
+                <p>[Description Needed]</p>
               </div>
             </td>
             <td>
@@ -3581,13 +3581,13 @@ Description of the returned value(s) needed.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>x1 (</code>
+                <code>x1 (numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 Array of shape <code>(N_x1,)</code> containing spatial coords of x1.</p>
               </div>
             </td>
@@ -3597,13 +3597,13 @@ Array of shape <code>(N_x1,)</code> containing spatial coords of x1.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>x2 (</code>
+                <code>x2 (numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 Array of shape <code>(N_x2,)</code> containing spatial coords of x2.</p>
               </div>
             </td>
@@ -3645,7 +3645,7 @@ Array of shape <code>(N_x2,)</code> containing spatial coords of x2.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Tuple[:class:<code>numpy:numpy.ndarray</code>, :class:<code>numpy:numpy.ndarray</code>]:
+                <p>Tuple[numpy:numpy.ndarray, numpy:numpy.ndarray]:
 Normalised or unnormalised spatial coords of x1 and x2.</p>
               </div>
             </td>
@@ -3834,14 +3834,14 @@ Normalised or unnormalised spatial coords of x1 and x2.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>data (</code>
+                <code>data</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span> | <span title="pandas.DataFrame">DataFrame</span> | <span title="typing.List">List</span>[<span title="xarray.DataArray">DataArray</span> | <span title="xarray.Dataset">Dataset</span> | <span title="pandas.DataFrame">DataFrame</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code> | List[:class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code>]):
-Data to unnormalise.</p>
+                <p>Data to unnormalise.</p>
               </div>
             </td>
             <td>
@@ -3885,7 +3885,7 @@ Defaults to True.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code> | List[:class:<code>xarray.DataArray</code> | :class:<code>xarray.Dataset</code> | :class:<code>pandas.DataFrame</code>]:
+                <p>xarray.DataArray | xarray.Dataset | pandas.DataFrame | List[xarray.DataArray | xarray.Dataset | pandas.DataFrame]:
 Unnormalised data.</p>
               </div>
             </td>
@@ -3939,14 +3939,14 @@ Unnormalised data.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>da1 (</code>
+                <code>da1</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -3955,14 +3955,14 @@ Unnormalised data.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>da2 (</code>
+                <code>da2</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -4033,14 +4033,14 @@ Whether <code>da1</code> and <code>da2</code> are on the same grid.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>da1 (</code>
+                <code>da1</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -4049,14 +4049,14 @@ Whether <code>da1</code> and <code>da2</code> are on the same grid.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>da2 (</code>
+                <code>da2</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -4082,7 +4082,7 @@ Whether <code>da1</code> and <code>da2</code> are on the same grid.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>
+                <p>xarray.DataArray
 Interpolated xarray.</p>
               </div>
             </td>
@@ -4125,13 +4125,13 @@ array (True if point is inside mask, False if outside).</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>coord_arr (</code>
+                <code>coord_arr (numpy</code>
             </td>
             <td>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>):
+                <p>numpy.ndarray):
 ...</p>
               </div>
             </td>
@@ -4141,14 +4141,14 @@ array (True if point is inside mask, False if outside).</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>mask_da (</code>
+                <code>mask_da</code>
             </td>
             <td>
+                  <code><span title="xarray.Dataset">Dataset</span> | <span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -4163,18 +4163,18 @@ array (True if point is inside mask, False if outside).</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>
+                <p>numpy.ndarray
 ...</p>
               </div>
             </td>
@@ -4215,14 +4215,14 @@ array (True if point is inside mask, False if outside).</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>X_mask (</code>
+                <code>X_mask</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -4231,14 +4231,14 @@ array (True if point is inside mask, False if outside).</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>X (</code>
+                <code>X</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>):
-...</p>
+                <p>...</p>
               </div>
             </td>
             <td>
@@ -4264,7 +4264,7 @@ array (True if point is inside mask, False if outside).</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>
+                <p>xarray.DataArray
 ...</p>
               </div>
             </td>
@@ -4291,53 +4291,22 @@ array (True if point is inside mask, False if outside).</p>
         <p>Convert xarray to normalised coordinate array.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>da (</code>
-            </td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>)
-...</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
     <p><span class="doc-section-title">Returns:</span></p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>numpy</code></td>            <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>numpy:numpy.ndarray</code>
+                <p>numpy.ndarray
 A normalised coordinate array of shape <code>(2, N)</code>.</p>
               </div>
             </td>

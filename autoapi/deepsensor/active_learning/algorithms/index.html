@@ -2213,37 +2213,37 @@
 
 
         <p>Greedy active learning sensor placement algorithm.</p>
-<p>Given a set of :class:<code>~.data.task.Task</code> objects containing existing context data, the algorithm
+<p>Given a set of deepsensor.data.task.Task objects containing existing context data, the algorithm
 iteratively (i.e. 'greedily') proposes <span class="arithmatex">\(N\)</span> locations for new context points
 from a search grid, using active learning with a DeepSensorModel.</p>
 <p>Within each greedy iteration, the algorithm evaluates an acquisition function
 over the search grid. The acquisition function value at a given query location
 relates to the merit of a new observation at that point, and is averaged over
-all :class:<code>~.data.task.Task</code> objects. The algorithm then
+all deepsensor.data.task.Task objects. The algorithm then
 selects the context location with the 'best' (max or min) acquisition function value.
-A new context observation is added to each :class:<code>~.data.task.Task</code> at that location.
+A new context observation is added to each deepsensor.data.task.Task at that location.
 This process is repeated until <span class="arithmatex">\(N\)</span> new context locations have been proposed.</p>
 <p>The algorithm either computes the acquisition function values
 in parallel over all query locations, or sequentially. This is dictated by the
 type of acquisition function passed to the algorithm:</p>
-<pre><code>1. :class:`~.active_learning.acquisition_fns.AcquisitionFunction`:
+<pre><code>1. deepsensor.active_learning.acquisition_fns.AcquisitionFunction:
 Returns a scalar acquisition function for
 a given query location. For example, the model's mean standard deviation
-over target locations (``MeanStddev``). For a given :class:`~.data.task.Task`
+over target locations (``MeanStddev``). For a given deepsensor.data.task.Task
 this requires running the model *once for every query location* with a new
 context point at that location, so these acquisition functions can be slow.
 
-2. :class:`~.active_learning.acquisition_fns.AcquisitionFunctionParallel`:
+2. deepsensor.active_learning.acquisition_fns.AcquisitionFunctionParallel:
 Returns all acquisition function values in parallel.
 For example, the model's standard deviation at query locations given
 the existing context data, which only requires running the model once for a
-given :class:`~.data.task.Task`. These acquisition functions are faster than
+given deepsensor.data.task.Task. These acquisition functions are faster than
 their sequential counterparts but are likely less informative.
 </code></pre>
 <p>Acquisition functions that inherit from
-:class:<code>~.active_learning.acquisition_fns.AcquisitionFunctionOracle</code>
+deepsensor.active_learning.acquisition_fns.AcquisitionFunctionOracle
 require ground truth target values at target locations. In this case, the algorithm
-must be provided with a :class:<code>~.data.loader.TaskLoader</code> object to sample these values.</p>
+must be provided with a deepsensor.data.loader.TaskLoader object to sample these values.</p>
 
 
 <details class="note" open>
@@ -2265,14 +2265,14 @@ Convolutional Gaussian Neural Processes' (2023), https://doi.org/10.1017/eds.202
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>model (</code>
+                <code>model</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="DeepSensorModel(data_processor=None, task_loader=None) (deepsensor.model.model.DeepSensorModel)" href="../../model/model/#deepsensor.model.model.DeepSensorModel">DeepSensorModel</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.model.model.DeepSensorModel</code>):
-Model to use for proposing new context points.</p>
+                <p>Model to use for proposing new context points.</p>
               </div>
             </td>
             <td>
@@ -2281,14 +2281,14 @@ Model to use for proposing new context points.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>X_s (</code>
+                <code>X_s</code>
             </td>
             <td>
+                  <code><span title="xarray.Dataset">Dataset</span> | <span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>):
-Xarray object containing the spatial coordinates that define the search grid.</p>
+                <p>Xarray object containing the spatial coordinates that define the search grid.</p>
               </div>
             </td>
             <td>
@@ -2297,14 +2297,14 @@ Xarray object containing the spatial coordinates that define the search grid.</p
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>X_t (</code>
+                <code>X_t</code>
             </td>
             <td>
+                  <code><span title="xarray.Dataset">Dataset</span> | <span title="xarray.DataArray">DataArray</span> | <span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code> | pd.DataFrame):
-Target spatial coordinates. Can either be an xarray object containing the spatial
+                <p>Target spatial coordinates. Can either be an xarray object containing the spatial
 coordinates of the target grid, or a pandas DataFrame containing a set of off-grid
 target locations.</p>
               </div>
@@ -2315,37 +2315,37 @@ target locations.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>X_s_mask (</code>
+                <code>X_s_mask</code>
             </td>
             <td>
+                  <code><span title="xarray.Dataset">Dataset</span> | <span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>, optional):
-Optional 2D mask for gridded search coordinates to ignore. If provided, the acquisition
+                <p>Optional 2D mask for gridded search coordinates to ignore. If provided, the acquisition
 function will only be computed at locations where the mask is True. Defaults to None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>X_t_mask (</code>
+                <code>X_t_mask</code>
             </td>
             <td>
+                  <code><span title="xarray.Dataset">Dataset</span> | <span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.Dataset</code> | :class:<code>xarray.DataArray</code>, optional):
-Optional 2D mask (for gridded target coordinates) to ignore.
+                <p>Optional 2D mask (for gridded target coordinates) to ignore.
 Useful e.g. if you only care about improving the model's predictions over a certain
 area. Defaults to None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2374,7 +2374,7 @@ area. Defaults to None.</p>
             <td>
               <div class="doc-md-description">
                 <p>Whether the coordinates of the X_* arguments above have been normalised
-by a :class:<code>~.data.processor.DataProcessor</code>. Defaults to False.</p>
+by a deepsensor.data.processor.DataProcessor. Defaults to False.</p>
               </div>
             </td>
             <td>
@@ -2402,41 +2402,41 @@ Currently, only "mean" infilling is supported. Defaults to "mean".</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>query_infill (</code>
+                <code>query_infill</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>, optional):
-Gridded xarray object containing observations to use when querying candidate context
-points. Must have all the same time points as the :class:<code>~.data.task.Task</code> objects
+                <p>Gridded xarray object containing observations to use when querying candidate context
+points. Must have all the same time points as the deepsensor.data.task.Task objects
 the algorithm is called with. If not on the same grid as <code>X_s</code>, it will be linearly
 interpolated to the same grid. Useful for providing the model with true observations
 rather than its own predictions. Defaults to None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>proposed_infill (</code>
+                <code>proposed_infill</code>
             </td>
             <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>xarray.DataArray</code>, optional):
-Similar to <code>query_infill</code>, but used when infilling pseudo observations at the end
+                <p>Similar to <code>query_infill</code>, but used when infilling pseudo observations at the end
 of a greedy iteration (rather than using model predictions). Useful e.g. to
 simulate the case where the model can obtain ground truth after requesting
 a sensor placement. Defaults to None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2492,20 +2492,20 @@ algorithm is run on. Defaults to 0.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>task_loader (</code>
+                <code>task_loader</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="TaskLoader(task_loader_ID=None, context=None, target=None, aux_at_contexts=None, aux_at_targets=None, links=None, context_delta_t=0, target_delta_t=0, time_freq='D', xarray_interp_method='linear', discrete_xarray_sampling=False, dtype='float32') (deepsensor.data.loader.TaskLoader)" href="../../data/loader/#deepsensor.data.loader.TaskLoader">TaskLoader</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.loader.TaskLoader</code>, optional):
-If using an :class:<code>~.active_learning.acquisition_fns.AcquisitionFunctionOracle</code>,
+                <p>If using an deepsensor.active_learning.acquisition_fns.AcquisitionFunctionOracle,
 a TaskLoader object is required to sample ground truth target values at target
 locations. Defaults to None.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
@@ -2544,7 +2544,7 @@ locations. Defaults to None.</p>
             <td>
               <div class="doc-md-description">
                 <p>If the <code>model</code> passed does not inherit from
-:class:<code>~.model.model.DeepSensorModel</code>.</p>
+deepsensor.model.model.DeepSensorModel.</p>
               </div>
             </td>
           </tr>
@@ -2599,14 +2599,14 @@ locations. Defaults to None.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>acquisition_fn (</code>
+                <code>acquisition_fn</code>
             </td>
             <td>
+                  <code><a class="autorefs autorefs-internal" title="AcquisitionFunction(model=None, context_set_idx=0, target_set_idx=0) (deepsensor.active_learning.acquisition_fns.AcquisitionFunction)" href="../acquisition_fns/#deepsensor.active_learning.acquisition_fns.AcquisitionFunction">AcquisitionFunction</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.active_learning.acquisition_fns.AcquisitionFunction</code>):
-The acquisition function to optimise.</p>
+                <p>The acquisition function to optimise.</p>
               </div>
             </td>
             <td>
@@ -2615,14 +2615,14 @@ The acquisition function to optimise.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>tasks (List[</code>
+                <code>tasks</code>
             </td>
             <td>
+                  <code><span title="typing.List">List</span>[<a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a>] | <a class="autorefs autorefs-internal" title="Task(task_dict) (deepsensor.data.task.Task)" href="../../data/task/#deepsensor.data.task.Task">Task</a></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>class:<code>~.data.task.Task</code>] | :class:<code>~.data.task.Task</code>):
-Tasks containing existing context data. If a list of Tasks, the acquisition
+                <p>Tasks containing existing context data. If a list of Tasks, the acquisition
 function will be averaged over Tasks.</p>
               </div>
             </td>
@@ -2670,18 +2670,18 @@ comparing with the change in metric that the acquisition function targets
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Tuple[:class:<code>pandas.DataFrame</code>, :class:<code>xarray.DataArray</code>]:
+                <p>Tuple[pandas.DataFrame, xarray.DataArray]:
 A tuple containing two objects:</p>
 <ul>
 <li>
-<p><strong>X_new_df</strong> (:class:<code>pandas.DataFrame</code>):
+<p><strong>X_new_df</strong> (pandas.DataFrame):
 Proposed sensor placements. Columns are the x1 and x2 coordinates of the
 sensor placements, and the index is the index of the greedy iteration
 at which the sensor placement was proposed (which can be interpreted as
 a priority order, with iteration 0 being the highest priority).</p>
 </li>
 <li>
-<p><strong>acquisition_fn_ds</strong> (:class:<code>xarray.DataArray</code>):
+<p><strong>acquisition_fn_ds</strong> (xarray.DataArray):
 Gridded acquisition function values at each search point. Dimensions
 are <code>iteration</code>, <code>time</code> (inferred from the input <code>tasks</code>), followed
 by the x1 and x2 coordinates of the spatial grid.</p>
@@ -2710,7 +2710,7 @@ by the x1 and x2 coordinates of the spatial grid.</p>
             <td>
               <div class="doc-md-description">
                 <p>If <code>acquisition_fn</code> is an
-:class:<code>~.active_learning.acquisition_fns.AcquisitionFunctionOracle</code>
+deepsensor.active_learning.acquisition_fns.AcquisitionFunctionOracle
 and <code>task_loader</code> is None.</p>
               </div>
             </td>
